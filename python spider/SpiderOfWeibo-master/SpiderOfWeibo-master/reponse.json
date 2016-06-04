@@ -1,0 +1,98 @@
+sinaSSOController.preloginCallBack
+(
+{
+	"retcode":0,
+	"servertime":1447580349,
+	"pcid":"xd-01ee4d114e1c59964396d92937c2de294e20",
+	"nonce":"9NRI04",
+	"pubkey":"EB2A38568661887FA180BDDB5CABD5F21C7BFD59C090CB2D245A87AC253062882729293E5506350508E7F9AA3BB77F4333231490F915F6D63C55FE2F08A49B353F444AD3993CACC02DB784ABBB8E42A9B1BBFFFB38BE18D78E87A0E41B9B8F73A928EE0CCEE1F6739884B9777E4FE9E88A1BBE495927AC4A799B3181D6442443",
+	"rsakv":"1330428213",
+	"is_openlock":0,
+	"lm":1,
+	"smsurl":"https:\/\/login.sina.com.cn\/sso\/msglogin?entry=weibo&mobile=18535477901&s=78a573ebcb7a0908a43d7e781a7479e7",
+	"showpin":1,
+	"exectime":11
+})
+{
+"retcode":20000000,
+"msg":"\u9a8c\u8bc1\u7801\u53d1\u9001\u6210\u529f",//验证码发送成功
+"data":{"cfrom":"xd"}
+}
+sinaSSOController.preloginCallBack({
+	"retcode":0,
+	"servertime":1447581109,
+	"pcid":"xd-f95651c262f331b554cc9dce55c2f261046a",
+	"nonce":"BOHWK2",
+	"pubkey":"EB2A38568661887FA180BDDB5CABD5F21C7BFD59C090CB2D245A87AC253062882729293E5506350508E7F9AA3BB77F4333231490F915F6D63C55FE2F08A49B353F444AD3993CACC02DB784ABBB8E42A9B1BBFFFB38BE18D78E87A0E41B9B8F73A928EE0CCEE1F6739884B9777E4FE9E88A1BBE495927AC4A799B3181D6442443",
+	"rsakv":"1330428213",
+	"exectime":19
+})py
+
+p=xd-6bbcbeaddf1af050de55df82fb8ec77b0654
+r=47235343
+s=0
+
+http://login.sina.com.cn/cgi/pin.php
+"smsurl":"https:\/\/login.sina.com.cn\/sso\/msglogin?entry=weibo&mobile=18535477901&s=78a573ebcb7a0908a43d7e781a7479e7",
+
+ var pincodeUrl = "http://login.sina.com.cn/cgi/pin.php";
+  this.getPinCodeUrl = function(size) {
+        if (size == undefined) {
+            size = 0
+        }
+        if (pcid) {
+            me.loginExtraQuery.pcid = pcid
+        }
+        var url = location.protocol == "https:" ? pincodeUrl.replace(/^http:/, "https:") : pincodeUrl;
+        return url + "?r=" + Math.floor(Math.random() * 100000000) + "&s=" + size + (pcid.length > 0 ? "&p=" + pcid: "")
+    };
+    this.showPinCode = function(id) {
+        me.$(id).src = me.getPinCodeUrl()
+    };
+ door=4fpab
+encoding=UTF-8
+entry=weibo
+from=
+gateway=1
+nonce=2G3S1P
+pagerefer=http://login.sina.com.cn/sso/logout.php?entry=miniblog&r=http%3A%2F%2Fweibo.com%2Flogout.php%3Fbackurl%3D%252F
+pcid=xd-ab3dbb4a66ab65e23c89d7336e714ddbff3f
+prelt=98
+pwencode=rsa2
+returntype=META
+rsakv=1330428213
+savestate=0
+servertime=1447587424
+service=miniblog
+sp=e0b5d5218adf7752538b859f52f7f0697801e678c1091101752a1dca1fb3edcea7c10eb352a456da5976cb2a15677918e9d62641c159959488653567271b6fe302d4828461c42caa22b4eb22756422386d3a8dcd321661a1ee6e0bfc948fb776dac0ee3defb90f775fec134713ebd673e1b8d0a61f7013762e7fff0b7db481f7
+sr=1600*900
+su=MTg1MzU0Nzc5MDE=
+url=http://weibo.com/ajaxlogin.php?framelogin=1&callback=parent.sinaSSOController.feedBackUrlCallBack
+useticket=1
+vsnf=1
+
+
+http://login.sina.com.cn/sso/prelogin.php?entry=weibo&callback=sinaSSOController.preloginCallBack&su=MTcwODkzNjgxOTY%3D&rsakt=mod&checkpin=1&client=ssologin.js(v1.4.18)&_=1448080332065
+http://login.sina.com.cn/sso/prelogin.php?entry=weibo&callback=sinaSSOController.preloginCallBack&su=MTc%3D&rsakt=mod&checkpin=1&client=ssologin.js(v1.4.18)&_=1448080320260
+
+_=1448083786752
+callback=sinaSSOController.preloginCallBack
+checkpin=1
+client=ssologin.js(v1.4.18)
+entry=weibo
+rsakt=mod
+su=MTg1MzU0Nzc5MDE=
+http://login.sina.com.cn/sso/prelogin.php
+
+http://login.sina.com.cn/sso/prelogin.php
+?entry=weibo
+&callback=sinaSSOController.preloginCallBack
+&su=MTg1MzU0Nzc5MDE%3D
+&rsakt=mod
+&checkpin=1
+&client=ssologin.js(v1.4.18)
+&_=1448083786752
+
+
+
+http://login.sina.com.cn/sso/prelogin.php?entry=weibo&callback=sinaSSOController.preloginCallBack&su=MTg1MzU0Nzc5MDE%3D&rsakt=mod&checkpin=1&client=ssologin.js%28v1.4.18%29&_=1448083786752
