@@ -23,7 +23,7 @@ classdef Engine
         worstFitness
         totalFitness
         aveFitness
-        
+        best
     end
     
     methods
@@ -37,7 +37,7 @@ classdef Engine
                      obj.distance=varargin{1};
                      obj.popSize=100;
                      obj.crossoverRate=0.7;
-                     obj.mutationRate=0.06;
+                     obj.mutationRate=0.1;
                    
                  case 4
                      %全部都给
@@ -86,20 +86,12 @@ classdef Engine
             obj.bestFitness=obj.CalFitGene(obj.population(1).gene);
             obj.worstFitness=obj.CalFitGene(obj.population(1).gene);
             obj.totalFitness=0;
-            
+            obj.best=obj.population(1);
             for people=1:obj.popSize
-%                 obj.population(people).fitness=0;
-%                 for city=1:obj.cityNum
-%                   %%  obj.population(people).gene(city)%% 
-%                     %%obj.population(people).gene(city+1)%%计算的是这两者之间的距离
-%                   %%还需计算最后一个城市与第一个城市之间的距离因此加上了mod
-%                     obj.population(people).fitness=obj.population(people).fitness+obj.distance(obj.population(people).gene(city),obj.population(people).gene(city+1));
-%                 end
-%                obj.population(people).fitness=1/obj.population(people).fitness;%daoshu
-
                 obj.totalFitness= obj.totalFitness+obj.population(people).fitness;%计算总的适应度
                 if obj.bestFitness<obj.population(people).fitness
                    obj.bestFitness=obj.population(people).fitness;
+                    obj.best=obj.population(people);
                 end
                 if obj.worstFitness>obj.population(people).fitness
                    obj.worstFitness=obj.population(people).fitness;
@@ -131,6 +123,9 @@ classdef Engine
                  end
              end
              obj=obj.Mutation();%变异
+             if obj.best.fitness>obj.population(1).fitness
+                 obj.population(1)=obj.best;
+             end
              obj=obj.CalFit();%计算最佳适应度
              
          end
